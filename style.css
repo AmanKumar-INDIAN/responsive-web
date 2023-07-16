@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Hanalei&family=Hind+Siliguri:wght@300&family=Hind:wght@300&family=Josefin+Sans:ital,wght@0,300;0,400;1,200&family=Kanit:ital,wght@0,400;1,300&family=Libre+Franklin:wght@100&family=Oxygen&family=Poppins:ital@0;1&family=Roboto+Mono:wght@200&display=swap');
+*{
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+text-decoration: none;
+text-transform: capitalize;
+transition:.2s linear ;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(to right top, #6f313f, #582b40, #40253b, #2a1f31, #191823, #23232b, #2e2e32, #39393a, #5f5f60, #89898a, #b4b4b5, #e2e2e3);
+    border-radius: 50px;
+}
+body{
+    background: black;
+}
+ section{
+    padding: 2rem 7%;
+ }
+
+.head{ 
+
+    background-image: linear-gradient(to left, #36000d, #2d0418, #22081d, #170a1d, #0d0b18, #0b0b1c, #070c21, #000d25, #000f36, #000f46, #000c55, #100061);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    border-bottom:1px solid white;
+    position: fixed;
+    top:0 ;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+#menu-btn{
+    display: none;
+}
+.head .logo img{
+    height: 6rem;
+}
+.navbar a{
+    text-decoration: none;
+    margin: 8px;
+    font-size: 1.6rem;
+    color: white;
+   
+
+}
+.navbar a:hover{
+    color: rgb(222, 202, 163);
+    text-shadow: 2px 5px 10px rgb(0, 0, 0);
+    border-bottom: 1px solid white;
+    padding-bottom: .5rem;
+}
+.side_shoping span{
+    color: white;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+.side_shoping span:hover{
+    color: rgb(212, 198, 147);
+}
+.head .search-form{
+position: absolute;
+top: 115%; right: 7%;
+background-color: white;
+width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center; 
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.head .search-form.active{
+    transform: scaleY(1);
+}
+.head .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem;
+    text-transform: none; 
+    font-weight: 600;
+    margin-left: 10px;
+}
+.head .search-form label{
+    background-color: rgb(167, 161, 161);
+    color: aliceblue;
+    display: flex;
+ 
+    align-items: center;
+
+    width: 40px; height: 50px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer; 
+   
+}
+.head .search-form label:hover{
+    background-color: black;
+    color: white; 
+    border:1px solid white;
+}
+.card-item-container{
+    position: absolute;
+    top: 110%; right: -100%;
+    height:calc(100vh -9.5rem);
+    width: 35rem;
+    background: white;
+    padding:0  1.5rem ;
+    
+  
+}
+.card-item-container.active{
+    right:0;
+}
+.card-item img{
+    width: 70px;
+    
+    border-radius: 30px;
+  border-bottom: 1px solid black;
+    margin: 5px; 
+    position: relative;
+    left: -50px;
+}
+.card-item {
+    height: 100px;
+    display: flex;
+   border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+   
+    margin: 2rem 0rem;
+    gap: 1.5rem;
+   
+}
+.card-item span{
+    margin-bottom: 90px;
+    position: relative;
+    top: 0px;
+   cursor: pointer;
+    right: -240px;
+
+}
+
+.card-item span:hover{
+    color: rgb(255, 0, 0);
+}
+
+.card-item .content{
+    font-size: 15px;
+}
+.price{
+    color: rgb(232, 144, 12);
+}
+.btn{
+   
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.7rem 3rem ;
+    font-size: 1.7rem;
+    color:white;
+    background: rgb(0, 115, 204);
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+.btn:hover{
+    letter-spacing: .2rem;
+    margin-bottom: 2rem;
+
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+       
+    }
+    .head{
+        padding: 1.5rem 2rem ;
+    }
+    section{
+        padding: 2rem ;
+     }
+}
+
+@media (max-width:786px){
+    #menu-btn{
+        display: inline-block;
+    }
+    .head .navbar{
+        position: absolute;
+        top: 100%;right:-100% ;
+        background: white;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .head .navbar.active{
+        right: 0;
+    }
+    .head .navbar a{
+        display: block;
+         color: black;
+         margin: 1.5rem;
+         padding: .5rem;
+         font-size: 2rem;
+    }
+    .head .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+   .home{
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+   }
+    .home .contantt h3{
+        font-size: 4rem;
+    }
+    .home .contantt p{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:450px){
+     html{
+        font-size: 55%;
+     }
+}
+.home{
+     
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    background-image:url("https://wallpaper.dog/large/33724.jpg" ) ;
+    background-size: cover;
+    background-position:center ;
+}
+.home .contantt{
+    opacity: 1;
+    max-width: 60rem;
+}
+.home .contantt h3{
+    text-transform: uppercase;
+    font-size: 6rem;
+    color: white;
+}
+.home .contantt p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: white;
+}
+.heading{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.heading span{
+    color: rgb(120, 95, 6);
+}
+
+.about .row{
+    border: 1px solid rgb(255, 254, 254);
+    display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+    background-image: linear-gradient(to left, #332d2f, #352a30, #342733, #312538, #29243d, #23223b, #1d213a, #171f38, #171b2e, #161825, #14151c, #111113);
+}
+.about .row .contant{
+ 
+    padding: 2rem; 
+    
+    
+    
+}
+.about .row .image {
+    flex:1 1 45rem;
+}
+.about .row .image img{
+    border: 1px solid white;
+    width: 100%;
+}
+.about .row .contant {
+    padding: 2rem;
+    flex: 1 1 45rem;
+}
+.about .row .contant p{
+    font-size: 1.6rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.about .row .contant h3{
+    font-size: 3rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.menu{
+    background-image: linear-gradient(to right top, #1a1513, #211817, #281a1f, #2c1e28, #2b2334, #2c293b, #2c3042, #2c3648, #363e4d, #404651, #4a4e56, #54565a);
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+.menu .box-container .box{
+    padding: 5rem;
+    text-align: center;
+    border: 1px solid white;
+}
+.menu .box-container .box img{
+    height: 10rem;
+
+}
+.menu .box-container .box h3{
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.menu .box-container .box .price{
+    color: white;
+    font-size: 2.5rem;
+    padding: 5rem 0;
+}
+.menu .box-container .box span{
+
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+.menu .box-container .box:hover{
+    background:white;
+}
+.menu .box-container .box:hover > *{
+    color: black;
+}
+.products{
+    background-image: linear-gradient(to right top, #630a3d, #5b1548, #501e52, #432559, #332b5e, #312855, #2e254c, #2b2244, #2a1930, #22121f, #170a11, #000000);
+}
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+.products .box-container .box{
+    text-align: center;
+    border: 1px solid white;
+    padding: 2rem;
+}
+.products .box-container .box .icons span{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border: 1px solid white;
+    color: white;
+    margin: .3rem;
+
+}
+.products .box-container .box .icons span:hover{
+    background: rgb(70, 69, 69);
+}
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
+.products .box-container .box .image img{
+    height: 25rem;
+    width: 25rem;
+}
+.products .box-container .box .content h3{
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+.products .box-container .box .content .starts{
+  
+    padding: 1.5rem;
+}
+.products .box-container .box .content .price{
+    color: white;
+    font-size: 2.5rem
+
+}
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;font-size: 1.5rem;
+}
+.products .box-container .box:hover {
+    background-color: rgb(40, 39, 39);
+}
+.products .box-container .box:hover > *{
+color: rgb(255, 0, 0);
+
+}
+.review{
+    background-image: linear-gradient(to bottom, #12366b, #3c2559, #4c123f, #4e0023, #450000);
+    margin-top: 6rem;
+}
+.review .box-container{
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 4rem;
+
+}
+.review .box-container .box {
+    border: 1px solid white;
+    text-align: center;
+    padding: 3rem 2rem;
+ 
+}
+.review .box-container .box p{
+    font-size:1.6rem ;
+    line-height: 1.8;
+    color: white;
+    padding: 2rem 0;
+}
+.user{
+    width: 8rem;
+   height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review .box-container .box .rimg{
+    width: 6rem;
+
+}
+.review .box-container .box h3{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: white;
+}
+.review .box-container .box .starts i{
+    font-size: 1.5rem;
+    color: white;
+}
+.starts i{
+    color: white;
+}
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    background: black;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: 1px solid white;
+}
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid white;
+}
+.contact .row form{
+    flex:  1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.contact .row form .inputBoz{
+    display: flex;
+    border: 1px solid white;
+    background: transparent;
+    margin: 1rem;
+    padding: 1rem;
+}
+.contact .row form .inputBoz input{
+    width: 100%;
+    background: transparent;
+    font-size: 2rem;
+    color: white;
+
+}
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+
+}
+.blogs .box-container .box{
+    border: 1px solid white;
+    
+ 
+}
+
+.blogs .box-container .box .image{
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+.blogs .box-container .box img{
+    width: 100%;
+    object-fit: cover;
+   
+}
+.blogs .box-container .box:hover .image img{
+    transform: scale(1.2,1.3)
+}
+.blogs .box-container .box  .content{
+    padding: 2rem;
+}
+.blogs .box-container .box  .content .tittle{
+    font-size: 2rem;
+    line-height: 1.5;
+    color: white;
+}
+.blogs .box-container .box  .content .tittle:hover{
+    color: rgb(181, 163, 2);
+}
+.blogs .box-container .box  .content span{
+    color: rgb(156, 156, 0);
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+.blogs .box-container .box  .content p{
+    font-size: 1.6rem;
+    line-height: 1.8;
+   color: rgb(255, 255, 255);
+   padding:1rem 0 ;
+}
+.footor{
+    border-top: 1px solid white;
+    background: black;
+    text-align: center;
+}
+.footor .shar{
+    padding: 1rem 0;
+}
+.footor .shar a{
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    line-height: 5rem;
+    color: white;
+    
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 1rem;
+   
+}
+.footor .shar a:hover{
+    font-size: 3rem;
+    background-color: rgb(198, 198, 89);
+    color: black;
+}
+.footor .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+.footor .links a{
+    padding:.7rem 2rem ;
+    color: white;
+    border: 1px solid white;
+    font-size: 2rem;
+}
+.footor .links a:hover{
+    border-radius: 20px;
+    color: rgb(140, 140, 17);
+}
+
+.footor .cradit{
+    color: white;
+    font-size: 1.2rem;
+}
+.footor .cradit span{
+    color: yellow;
+}
